@@ -3,9 +3,12 @@
 {% block content %}
 <h1>This is the To Do List Entry Page</h1>
 {% for entry in entry_data %}
+<hr>
 <p>Subject : {{ entry.subject }}</p>
 <p>Description : {{ entry.description }}</p>
 <a href="{% url 'single_entry' entry.id %}">View</a>
 <br>
+<a href="{% url 'update_entry' entry.id %}">Update Entry</a>
+<a href="{% url 'delete_entry' entry.id %}">Delete Entry</a>
 {% endfor %}
 {% endblock content %}
