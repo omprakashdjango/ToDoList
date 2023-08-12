@@ -1,4 +1,13 @@
-<h1>Logo</h1>
-<a href="{% url 'create_entry' %}">Create Entry</a>
-<a href="{% url 'entry_list' %}">Go Back</a>
-<hr>
+{% load static %}
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{% url 'entry_list' %}">
+            <img src="{% static 'images/logo.png' %}" alt="LOGO">
+        </a>
+    </div>
+    <div class="nav-buttons">
+      <a href="{% url 'entry_list' %}" class="back-button">Back</a>
+      <a href="{% url 'create_entry' %}" class="create-entry-button">Create Entry</a>
+    </div>
+</nav>

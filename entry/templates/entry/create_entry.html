@@ -1,9 +1,16 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
-</form>
+
+<div class="create-task">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="action-btns">
+            <button type="submit" class="action-btn save-btn">Save</button>
+            <a href="{% url 'entry_list' %}" class="action-btn go-back-btn">Go Back</a>
+        </div>
+    </form>
+</div>
+
 {% endblock content %}

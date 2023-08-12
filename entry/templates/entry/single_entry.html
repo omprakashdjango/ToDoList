@@ -2,10 +2,15 @@
 
 {% block content %}
 
-<h1>{{ single_entry.subject }}</h1>
-
-<p>{{ single_entry.description }}</p>
-<br>
-<a href="{% url 'entry_list' %}">GO BACK</a>
+<div class="task-details">
+    <div class="task-info">
+        <p><strong>Subject:</strong>{{ single_entry.subject }}</p>
+        <p><strong>Description:</strong>{{ single_entry.description }}</p>
+    </div>
+    <div class="task-actions">
+        <a href="{% url 'update_entry' single_entry.id %}" class="action-btn edit-btn">Edit</a>
+        <a href="{% url 'entry_list' %}" class="action-btn go-back-btn">Go Back</a>
+    </div>
+</div>
 
 {% endblock content %}

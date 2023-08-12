@@ -1,14 +1,18 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1>This is the To Do List Entry Page</h1>
-{% for entry in entry_data %}
-<hr>
-<p>Subject : {{ entry.subject }}</p>
-<p>Description : {{ entry.description }}</p>
-<a href="{% url 'single_entry' entry.id %}">View</a>
-<br>
-<a href="{% url 'update_entry' entry.id %}">Update Entry</a>
-<a href="{% url 'delete_entry' entry.id %}">Delete Entry</a>
-{% endfor %}
+<div class="container">
+    <h1>To Do List</h1>
+    {% for entry in entry_data %}
+        <div class="task">
+            <span class="task-text">{{ entry.subject }}</span>
+            <div class="task-actions">
+                <a href="{% url 'single_entry' entry.id %}" class="action-btn view-btn">View</a>
+                <a href="{% url 'update_entry' entry.id %}" class="action-btn edit-btn">Edit</a>
+                <a href="{% url 'delete_entry' entry.id %}" class="action-btn delete-btn">Delete</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock content %}

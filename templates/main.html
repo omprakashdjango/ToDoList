@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/navbar.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    
 </head>
 <body>
 
@@ -12,6 +17,13 @@
     {% block content %}
     {% endblock content %}
 
-    <p>FOOTER</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> To Do List. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Include the JavaScript file -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
