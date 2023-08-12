@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>{{ single_entry.subject }}</h1>
+
+<p>{{ single_entry.description }}</p>
+<br>
+<a href="{% url 'entry_list' %}">GO BACK</a>
+
+{% endblock content %}

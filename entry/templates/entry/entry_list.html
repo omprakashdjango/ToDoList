@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>This is the To Do List Entry Page</h1>
+{% for entry in entry_data %}
+<p>Subject : {{ entry.subject }}</p>
+<p>Description : {{ entry.description }}</p>
+<a href="{% url 'single_entry' entry.id %}">View</a>
+<br>
+{% endfor %}
+{% endblock content %}
